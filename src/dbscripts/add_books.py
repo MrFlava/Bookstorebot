@@ -10,8 +10,7 @@ def get_new_books(bot, update, user_data):
         user_data['Description'] = text
     elif 'Price' not in user_data:
         user_data['Price'] = text
-        book3 = Books(title = str(user_data['Title']), description = str(user_data['Description']), price = str(user_data['Price']))
-        session.add(book3)
+        session.add(Books(title = user_data['title'],description =  user_data['description'], price =  user_data['price']))
         session.commit()
         bot.send_message(chat_id = update.effective_user.id, text = 'Отлично, данные успешно записаны!')
         del user_data['Title']
