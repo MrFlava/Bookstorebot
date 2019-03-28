@@ -19,16 +19,7 @@ class Users(base):
     __tablename__ = 'botusers'
     user_id = Column(Integer, primary_key=True)
     name = Column(String)
-"""
 
-class Orders(base):
-    __tablename__ = 'orders'
-    customer_name = Column(Integer, primary_key=True)
-    order_book = Column(String) 
-    customer_email = Column(String)
-    customer_phone = Column(Integer)
-    
-"""
 Session = sessionmaker(db)
 session = Session()
 base.metadata.create_all(db)
