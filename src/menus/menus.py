@@ -41,7 +41,7 @@ def keyboard_functions(bot, update, user_data):
                 bot.send_message(text= (book.prod_name, book.about, str(book.cost), str(book.edition)), chat_id=query.message.chat_id,
                                  message_id=query.message.message_id)
         elif user_data['button'] == 'Order book':
-            bot.send_message(text='Хорошо, тогда введите /order своё имя, /order название книги, /order e-mail, /order моб. телефон', chat_id=query.message.chat_id,
+            bot.send_message(text='Хорошо, тогда введите /order свой ник, /order название книги, /order e-mail, /order моб. телефон', chat_id=query.message.chat_id,
                              message_id=query.message.message_id)
         elif user_data['button'] == 'Add':
             bot.send_message(text='Окей,вот список добавленных ранее книг', chat_id=query.message.chat_id,
