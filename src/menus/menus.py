@@ -50,7 +50,7 @@ def keyboard_functions(bot, update, user_data):
                 bot.send_message(text=(book.prod_name, book.about, str(book.cost), str(book.edition)),
                                  chat_id=query.message.chat_id,
                                  message_id=query.message.message_id)
-            bot.send_message(text = 'Для добавления новой книги введите /add id книги, /add названиИли  ты  своим буллингом хочешь компенсировать свою ущербность?е, /add описание,  /add цена, /add кол-во экземпляров', chat_id=query.message.chat_id,
+            bot.send_message(text = 'Для добавления новой книги введите /add id книги, /add название, /add описание,  /add цена, /add кол-во экземпляров', chat_id=query.message.chat_id,
                              message_id=query.message.message_id)
         elif user_data['button'] == 'Change':
             bot.send_message(text='Введи /change название книги /change новое описание',
