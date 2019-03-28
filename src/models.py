@@ -20,6 +20,13 @@ class Users(base):
     user_id = Column(Integer, primary_key=True)
     name = Column(String)
 
+class Orderbooks(base):
+    __tablename__ = 'orderedbooks'
+    nickname = Column(String, primary_key=True)
+    bookname = Column(String)
+    email = Column(String)
+    phone = Column(Integer)
+
 Session = sessionmaker(db)
 session = Session()
 base.metadata.create_all(db)
