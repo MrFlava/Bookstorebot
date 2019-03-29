@@ -1,7 +1,8 @@
-import sys
+import  os
 import local_settings as ls
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-sys.path.append("/home/user/PycharmProjects/bookstorebot/src/models.py")
+datapath = os.path.dirname(__file__)
+models =os.path.join(datapath, "bookstorebot/src/models.py")
 from  models import Users, Products, session
 
 def start(bot, update,user_data):
