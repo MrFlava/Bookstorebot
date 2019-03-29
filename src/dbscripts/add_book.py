@@ -1,5 +1,6 @@
-import sys
-sys.path.append("/home/user/PycharmProjects/bookstorebot/src/models.py")
+import  os
+datapath = os.path.dirname(__file__)
+models =os.path.join(datapath, "bookstorebot/src/models.py")
 from models import Products, session
 
 def get_new_books(bot, update, user_data):
