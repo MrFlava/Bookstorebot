@@ -1,5 +1,3 @@
-import sys
-sys.path.append("/home/user/PycharmProjects/bookstorebot/src/models.py")
 from  models import Users,session
 def send_messages(bot,update):
     users = session.query(Users)
