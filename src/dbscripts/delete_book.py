@@ -1,5 +1,6 @@
-import  sys
-sys.path.append("/home/user/PycharmProjects/bookstorebot/src/models.py")
+import  os
+datapath = os.path.dirname(__file__)
+models =os.path.join(datapath, "bookstorebot/src/models.py")
 from models import  Products, session
 def delete_book(bot,update,user_data):
     text = update.message.text.replace("/delete", "")
