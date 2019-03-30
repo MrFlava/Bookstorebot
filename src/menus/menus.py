@@ -15,7 +15,7 @@ def start(bot, update,user_data):
         user_data['username'] = update.message.from_user.name
         users = session.query(Users).all()
         for user in users:
-            indata = session.query(Users).filter(Users.user_id == user_data['title'])
+            indata = session.query(Users).filter(Users.user_id == user_data['user_id'])
             if not indata:
                 session.add(Users(user_id=user_data['user_id'], name=user_data['username']))
                 session.commit()
