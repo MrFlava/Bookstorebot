@@ -44,7 +44,7 @@ def keyboard_functions(bot, update, user_data):
                 price = str(book.cost)
                 editions = str(book.edition)
 
-                bot.send_message(text='Название:{}'.format(book_name)+' Описание:{}'.format(description) + ' Цена (в $):{}'.format(price)+' Описание:{}'.format(editions), chat_id=query.message.chat_id,
+                bot.send_message(text='Название:{}'.format(book_name)+' Описание:{}'.format(description) + ' Цена (в $):{}'.format(price)+' Кол-во:{}'.format(editions), chat_id=query.message.chat_id,
                                  message_id=query.message.message_id)
 
         elif user_data['button'] == 'Order book':
@@ -60,7 +60,7 @@ def keyboard_functions(bot, update, user_data):
                 description = book.about
                 price = str(book.cost)
                 editions = str(book.edition)
-                bot.send_message(text='Название:{}'.format(book_name) + ' Описание:{}'.format(description) + ' Цена (в $):{}'.format(price) + ' Описание:{}'.format(editions), chat_id=query.message.chat_id,message_id=query.message.message_id)
+                bot.send_message(text='Название:{}'.format(book_name) + ' Описание:{}'.format(description) + ' Цена (в $):{}'.format(price) + ' Кол-во:{}'.format(editions), chat_id=query.message.chat_id,message_id=query.message.message_id)
         elif user_data['button'] == 'change':
             bot.send_message(text='Введи /change название книги /change новое описание',
                              chat_id=query.message.chat_id, message_id=query.message.message_id)
