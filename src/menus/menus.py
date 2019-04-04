@@ -6,7 +6,7 @@ from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandl
 datapath = os.path.dirname(__file__)
 models = os.path.join(datapath, "bookstorebot/src/models.py")
 from models import Users, Products, session
-KEYBOARD, ADMIN = range(2)
+KEYBOARD= range(1)
 def start(bot, update,user_data):
         keyboard_customer = [[InlineKeyboardButton('Список книг', callback_data='list_of_books'),
                               InlineKeyboardButton('Заказать книгу', callback_data='order_book')]]
