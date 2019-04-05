@@ -1,6 +1,6 @@
 import os
 import formencode
-datapath = os.path.dirname(__file__)#Уберу, как только будет setup.py
+datapath = os.path.dirname(__file__)
 models =os.path.join(datapath, "bookstorebot/src/models.py")
 from  telegram.ext import  MessageHandler,ConversationHandler, CommandHandler, Filters
 from models import  Products, session
