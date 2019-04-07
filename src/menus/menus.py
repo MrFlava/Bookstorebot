@@ -1,9 +1,5 @@
 import os
 import local_settings as ls
-"""
-from  botmanlib.menus.basemenu import  BaseMenu 
- вызов basmenu ( дойду до этого, как только бот без этой библиотеки будет нормальным)
-"""
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandler
 datapath = os.path.dirname(__file__)
