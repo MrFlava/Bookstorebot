@@ -4,7 +4,7 @@ models = os.path.join(datapath, "bookstorebot/src/models.py")
 #from  telegram.ext import MessageHandler, ConversationHandler, CommandHandler
 from models import session, Orderbooks
 def get_order(bot, update, user_data):
-    #НУЖНЫ ВАЛИДАТОРЫ!!!!!
+
     text = update.message.text.replace("/order", "")
     text = "".join(text.split())
     if 'name' not in user_data:
