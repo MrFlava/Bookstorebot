@@ -1,8 +1,8 @@
 import os
 import formencode
-datapath = os.path.dirname(__file__) #Уберу, как только будет setup.py
+datapath = os.path.dirname(__file__)
 models = os.path.join(datapath, "bookstorebot/src/models.py")
-from  telegram.ext import MessageHandler, ConversationHandler,RegexHandler, Filters #для ConvHandler
+from  telegram.ext import MessageHandler, ConversationHandler,RegexHandler, Filters
 from models import session, Orderbooks
 BOOK, BOOK_NOTEXIST = range(2)
 def order_not_exist_book(bot,update):
