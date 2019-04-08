@@ -15,6 +15,7 @@ def main():
     dp.add_handler(exist_handler)
     dp.add_handler(notexist_handler)
     dp.add_handler(record_handler)
+    dp.add_handler(desc_handler)
     updater.start_polling()
     updater.idle()
 
