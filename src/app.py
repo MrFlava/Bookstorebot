@@ -8,6 +8,7 @@ from telegram.ext import Updater
 def main():
     updater = Updater(Token)
     dp = updater.dispatcher
+    dp.add_handler(sends_handler)
     dp.add_handler(menu_handler)
     dp.add_handler(admkeyboard_handler)
     dp.add_handler(delete_handler)
