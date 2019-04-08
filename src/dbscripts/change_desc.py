@@ -1,6 +1,6 @@
 import os
 from telegram.ext import  MessageHandler, Filters, ConversationHandler, CommandHandler
-datapath = os.path.dirname(__file__)#Уберу, как только будет setup.py
+datapath = os.path.dirname(__file__)
 models = os.path.join(datapath, "bookstorebot/src/models.py")
 from models import Products, session
 NEW_DESC = range(1)
