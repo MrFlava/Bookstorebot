@@ -1,9 +1,6 @@
-import os
 import formencode
-datapath = os.path.dirname(__file__)
-models =os.path.join(datapath, "bookstorebot/src/models.py")
 from  telegram.ext import  MessageHandler,ConversationHandler, CommandHandler, Filters
-from models import  Products, session
+from src.models import  Products, session
 DELETE = range(1)
 def delete_book(bot,update,user_data):
     text = update.message.text.replace("/delete", "")
