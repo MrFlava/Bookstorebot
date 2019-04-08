@@ -1,9 +1,6 @@
-import os
 import formencode
-datapath = os.path.dirname(__file__)
-models = os.path.join(datapath, "bookstorebot/src/models.py")
 from  telegram.ext import MessageHandler, ConversationHandler,RegexHandler, Filters
-from models import session, Orderbooks
+from src.models import session, Orderbooks
 BOOK, BOOK_NOTEXIST = range(2)
 def order_not_exist_book(bot,update):
     bot.send_message(chat_id=update.message.chat_id, message_id=update.message.message_id, text='Тогда введите: свой ник,название заказанной книги, e-mail и моб. телефон. Мы сообщим, когда она будет в наличии!')
