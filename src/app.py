@@ -1,4 +1,5 @@
 from local_settings import Token
+from dbscripts.add_book import record_handler
 from dbscripts.orders import exist_handler, notexist_handler
 from dbscripts.delete_book import delete_handler
 from menus.menus import menu_handler, admkeyboard_handler
@@ -11,6 +12,7 @@ def main():
     dp.add_handler(delete_handler)
     dp.add_handler(exist_handler)
     dp.add_handler(notexist_handler)
+    dp.add_handler(record_handler)
     updater.start_polling()
     updater.idle()
 
