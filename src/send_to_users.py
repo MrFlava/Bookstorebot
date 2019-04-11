@@ -1,4 +1,4 @@
-from models import Users, session
+from src.models import Users, session
 from telegram.ext import ConversationHandler, CommandHandler, MessageHandler, Filters
 SEND_MESSAGE = range(1)
 def message_instruction(bot,update):

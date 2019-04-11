@@ -1,4 +1,4 @@
-import local_settings as ls
+import src.local_settings as ls
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandler
 from src.models import Users, Products, session

@@ -1,6 +1,6 @@
 import formencode
-from  telegram.ext import  MessageHandler,ConversationHandler, CommandHandler, Filters
-from src.models import  Products, session
+from telegram.ext import  MessageHandler,ConversationHandler, CommandHandler, Filters
+from src.models import Products, session
 DELETE = range(1)
 def delete_book(bot,update,user_data):
     text = update.message.text.replace("/delete", "")

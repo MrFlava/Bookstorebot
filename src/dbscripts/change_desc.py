@@ -1,5 +1,4 @@
 from telegram.ext import  MessageHandler, Filters, ConversationHandler, CommandHandler
-datapath = os.path.dirname(__file__)
 from src.models import Products, session
 NEW_DESC = range(1)
 def change_instruction(bot,update):
