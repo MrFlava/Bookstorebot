@@ -2,7 +2,7 @@ import os
 import logging
 from src.settings import MEDIA_FOLDER, RESOURCES_FOLDER
 from botmanlib.bot import BotmanBot
-from src.send_to_users import sends_handler
+from src.dbscripts.send_to_users import sends_handler
 from src.dbscripts.add_book import record_handler
 from src.dbscripts.orders import exist_handler, notexist_handler
 from src.dbscripts.change_desc import desc_handler
