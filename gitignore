@@ -1,7 +1,0 @@
-*.egg-info
-.idea/
-.venv/
-__pycache__/
-src/local_settings.py
-*pickle
-
