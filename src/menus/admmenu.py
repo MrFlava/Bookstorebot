@@ -4,8 +4,7 @@ from botmanlib.menus.basemenu import BaseMenu
 from src.models import Products, session
 from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-#Нормальное название классов и констант
-#Нужно поставить отдельные callbackquery и паттерны
+
 class AdminMenu(BaseMenu):
     class States(enum.Enum):
         ADMKEYBOARD = 1
@@ -40,7 +39,7 @@ class AdminMenu(BaseMenu):
                                  message_id=query.message.message_id)
             return self.States.ADMKEYBOARD
     def get_admin(self, bot, update, user_data):
-            text = update.message.text.replace('/admin', '') #pass_args
+            text = update.message.text.replace('/admin', '') 
             text = "".join(text.split())
             user_data['password'] = text
             if user_data['password'] == ADMIN_PASSWORD:
@@ -63,5 +62,5 @@ class AdminMenu(BaseMenu):
                 states={
                     self.States.ADMKEYBOARD: [CallbackQueryHandler(self.adminkeyboard_functions,
                                                                    pass_user_data=True)]},
-                fallbacks=[]) #Полюбому должны быть!
+                fallbacks=[])
             return handler
