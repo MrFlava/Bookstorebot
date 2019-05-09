@@ -57,5 +57,5 @@ class StartMenu(BaseMenu):
                                            states={
                                                self.States.KEYBOARD: [
                                                    CallbackQueryHandler(self.user_keyboard_functions, pass_user_data=True)]},
-                                           fallbacks=[]) #Полюбому должны быть!
+                                           fallbacks=[]) 
         return handler
