@@ -7,7 +7,7 @@ from src.models import Users, Products, session
 
 class StartMenu(BaseMenu):
     class States(enum.Enum):
-        KEYBOARD = 1 #Должен быть ACTION
+        KEYBOARD = 1
     def start(self, bot, update, user_data):
         keyboard_customer = [[InlineKeyboardButton('Список книг', callback_data='list_of_books'),
                               InlineKeyboardButton('Заказать книгу', callback_data='order_book')]]
