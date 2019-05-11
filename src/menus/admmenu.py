@@ -5,8 +5,7 @@ from botmanlib.menus.basemenu import BaseMenu
 from src.models import Products, session
 from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandler, MessageHandler, Filters
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-#Нормальное название классов и констант
-#Нужно поставить отдельные callbackquery и паттерны
+
 class AdminMenu(BaseMenu):
     class States(enum.Enum):
         ACTION  = 1
