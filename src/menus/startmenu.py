@@ -1,13 +1,15 @@
 import enum
 from botmanlib.menus.basemenu import BaseMenu
+from  botmanlib.menus.helpers import  unknown_command
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
-from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandler
+from telegram.ext import CommandHandler, CallbackQueryHandler, ConversationHandler, MessageHandler, Filters
 from src.models import Users, Products, session
 
 
 class StartMenu(BaseMenu):
+    menu_name = 'start_menu'
     class States(enum.Enum):
-        KEYBOARD = 1
+        ACTION = 1
     def start(self, bot, update, user_data):
         keyboard_customer = [[InlineKeyboardButton('Список книг', callback_data='list_of_books'),
                               InlineKeyboardButton('Заказать книгу', callback_data='order_book')]]
@@ -24,7 +26,7 @@ class StartMenu(BaseMenu):
             else:
                 print('Этот пользователь уже сущ. в БД!')
                 break
-        return self.States.KEYBOARD
+        return self.States.ACTION
 
     def user_keyboard_functions(self, bot, update, user_data):
         query = update.callback_query
@@ -50,12 +52,12 @@ class StartMenu(BaseMenu):
             kb_markup = ReplyKeyboardMarkup(kb, one_time_keyboard=True, resize_keyboard=True)
             bot.send_message(text='Вы точно нашли подходящюю для вас книгу?', chat_id=query.message.chat_id,
                              message_id=query.message.message_id, reply_markup=kb_markup)
-        return self.States.KEYBOARD
+        return self.States.ACTION
 
     def get_handler(self):
         handler = ConversationHandler(entry_points=[CommandHandler('start', self.start, pass_user_data=True)],
                                            states={
-                                               self.States.KEYBOARD: [
+                                               self.States.ACTION: [
                                                    CallbackQueryHandler(self.user_keyboard_functions, pass_user_data=True)]},
-                                           fallbacks=[]) 
+                                           fallbacks=[MessageHandler(Filters.all, unknown_command(-1), pass_user_data=True)])
         return handler
