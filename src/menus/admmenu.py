@@ -13,7 +13,7 @@ class AdminMenu(BaseMenu):
     def adminkeyboard_functions(self, bot, update, user_data):
             query = update.callback_query
             user_data['adm_button'] = query.data
-            books = session.query(Products) #Не нужен запрос, нужен объект
+            books = session.query(Products) 
             if user_data['adm_button'] == 'add':
                 bot.send_message(text='Окей,вот список добавленных ранее книг', chat_id=query.message.chat_id,
                                  message_id=query.message.message_id)
