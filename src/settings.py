@@ -4,8 +4,20 @@ from os import path
 from botmanlib.utils import parse_environ_settings
 
 PROJECT_ROOT = path.normpath(path.join(path.dirname(path.realpath(__file__)), '..'))
-ADMINS = []
-ADMIN_PASSWORD = "simplepassword"
+
+"""---------------------------- WEBHOOK ---------------------------"""
+WEBHOOK_ENABLE = False
+WEBHOOK_URL = "/"
+WEBHOOK_IP = '127.0.0.1'
+WEBHOOK_PORT = -1
+
+"""-----EMAIL SETTINGS-----"""
+SENDER_SERVER = ""
+SENDER_SERVER_PORT = None
+SENDER_USERNAME = ""
+SENDER_PASSWORD = ""
+SENDER_EMAIL = ""
+
 MEDIA_FOLDER = path.join(PROJECT_ROOT, 'media')
 RESOURCES_FOLDER = path.join(PROJECT_ROOT, 'resources')
 SETTINGS_FILE = path.join(RESOURCES_FOLDER, 'settings.json')
@@ -57,7 +69,6 @@ logging.config.dictConfig({
 parse_environ_settings(locals())
 
 try:
-    from local_settings import *
+    from src.local_settings import *
 except ImportError:
     pass
-
